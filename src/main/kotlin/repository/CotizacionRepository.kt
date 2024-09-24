@@ -43,7 +43,7 @@ class CotizacionRepository {
                 for (i in map) {
                     val max = map.get(numero)?.get(2)?.replace(".", "")?.replace(",", ".")?.toDouble() ?: 0.0
                     val min = map.get(numero)?.get(3)?.replace(".", "")?.replace(",", ".")?.toDouble() ?: 0.0
-                    val media = ((min + max) / 2).toString().format("%.2f").toDouble()
+                    val media = ((min + max) / 2).toString().format("%.2f").replace(",",".")
                     it.write(
                         "Name : ${
                             map.get(numero)?.get(0)
