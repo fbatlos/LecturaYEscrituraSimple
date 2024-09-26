@@ -13,6 +13,7 @@ class CotizacionRepository {
         val pahtFinal=paht.resolve("cotizacion.csv")
         val br:BufferedReader = Files.newBufferedReader(pahtFinal)
         br.readLine()
+
         val informacionUnitaria = mutableMapOf<Int,List<String>>()
         var numeros = 0
 
@@ -32,10 +33,12 @@ class CotizacionRepository {
     }
 
     fun MakeSummary(paht: Path,map: MutableMap< Int,List<String>>) {
+
         val pahtFinal = paht.resolve("cotizacionFinal.csv")
         if (pahtFinal.notExists()) {
             pahtFinal.createFile()
         }
+
         var numero = 0
         val bw = Files.newBufferedWriter(pahtFinal)
 

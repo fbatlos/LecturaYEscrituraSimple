@@ -11,7 +11,7 @@ Nombre (nombre de la empresa), Final (precio de la acción al cierre de bolsa), 
 fun main() {
     val cotiza = CotizacionRepository()
     val path = Path.of("src").resolve("main").resolve("ficheros")
-    cotiza.ShowAll(path).forEach { println(it)  }
+    //cotiza.ShowAll(path).forEach { println(it)  }
     cotiza.MakeSummary(path,cotiza.ShowAll(path))
 
 }
